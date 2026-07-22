@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="ems-dashboard">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon"><i class="fas fa-users"></i></div>
+      <div>
+        <h3>EMS</h3>
+        <p>Employee Hub</p>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="active"><i class="fas fa-chart-pie"></i><span>Dashboard</span></a>
+      <a href="{{ url_for('employee.employee_list') }}"><i class="fas fa-user-friends"></i><span>Employees</span></a>
+      <a href="{{ url_for('employee.employeeAdd') }}"><i class="fas fa-user-plus"></i><span>Add Employee</span></a>
+      <a href="#"><i class="fas fa-file-alt"></i><span>Reports</span></a>
+      <a href="#"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <section class="hero-card">
+      <div>
+        <p class="eyebrow">Workforce overview</p>
+        <h1>Manage your employees with clarity.</h1>
+        <p class="hero-text">Track department strength, keep records organized, and respond quickly with a seamless employee management experience.</p>
+      </div>
+      <a href="{{ url_for('employee.employeeAdd') }}" class="btn btn-primary btn-lg">+ Add Employee</a>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+        <div>
+          <h3>128</h3>
+          <p>Total Employees</p>
+        </div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-icon green"><i class="fas fa-user-check"></i></div>
+        <div>
+          <h3>96</h3>
+          <p>Active Employees</p>
+        </div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-icon purple"><i class="fas fa-building"></i></div>
+        <div>
+          <h3>6</h3>
+          <p>Departments</p>
+        </div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-icon orange"><i class="fas fa-calendar-check"></i></div>
+        <div>
+          <h3>91%</h3>
+          <p>Attendance</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="content-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Employee roster</p>
+          <h2>Recent Employees</h2>
+        </div>
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search employees" />
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="employee-table">
+          <thead>
+            <tr>
+              <th>Employee ID</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1001</td>
+              <td>Alice Johnson</td>
+              <td>Engineering</td>
+              <td>Developer</td>
+              <td><span class="badge active">Active</span></td>
+              <td>
+                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>#1002</td>
+              <td>Brian Smith</td>
+              <td>HR</td>
+              <td>Manager</td>
+              <td><span class="badge inactive">Inactive</span></td>
+              <td>
+                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>#1003</td>
+              <td>Carla Diaz</td>
+              <td>Design</td>
+              <td>UI/UX Lead</td>
+              <td><span class="badge active">Active</span></td>
+              <td>
+                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-panel form-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Quick entry</p>
+          <h2>Add Employee</h2>
+        </div>
+      </div>
+
+      <form class="employee-form">
+        <div class="form-grid">
+          <label>
+            <span>Full Name</span>
+            <input type="text" placeholder="Enter full name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" placeholder="Enter email" />
+          </label>
+          <label>
+            <span>Phone</span>
+            <input type="tel" placeholder="Enter phone" />
+          </label>
+          <label>
+            <span>Department</span>
+            <select>
+              <option>Engineering</option>
+              <option>HR</option>
+              <option>Design</option>
+              <option>Finance</option>
+            </select>
+          </label>
+          <label>
+            <span>Role</span>
+            <input type="text" placeholder="Enter role" />
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+  </main>
+</div>
+{% endblock %}

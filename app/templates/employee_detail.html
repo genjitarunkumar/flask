@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h3>{{employee.id}}</h3>
+        <h5>{{employee.name}}</h5>
+        <h5>{{employee.email}}</h5>
+        <h5>{{employee.salary}}</h5>
+        <h5>{{employee.department}}</h5>
+    </div>
+    <a href="/employee/list" class="btn btn-primary"> Go Back </a>
+</div>
+
+{% endblock %}
